@@ -1,0 +1,26 @@
+<header class="header">
+    <div>
+        <nav class="nav">
+            <!-- clases necesarias. Y agregar navbar-collapse -->
+            <!-- navbar navbar-expand-lg bg-primary -->
+            <div class="nav-logo">
+                <a href="index.html" title="logo"><img src="{% static 'Login/images/logo-blanco-header.svg' %}" class="nav-logo"
+                    alt=""></a>
+            </div>
+            <div class="nav-menu">
+                <ul class="nav-menu__item">
+                    <li><a href="{% url 'prestamos' %}" class="nav-menu__link">Préstamos</a></li>
+                    <li><a href="{% url 'inversiones' %}" class="nav-menu__link">Inversiones</a></li>
+                    <li><a href="{% url 'tarjetas' %}" class="nav-menu__link">Tarjetas</a></li>
+                    <li><a href="{% url 'transferencias' %}" class="nav-menu__link">Transferencias</a></li>
+                    <li><a href="{% url 'cuentas' %}" class="nav-menu__link">Cuentas</a></li>
+                    <li><a href="{% url 'servicios' %}" class="nav-menu__link">Servicios</a></li>
+                    <li><a href="login.html" class="nav-menu__link">Cerrar Sesión</a></li>
+                </ul>
+            </div>
+            <button class="navbar-toggler collapse" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </nav>
+    </div>
+</header>

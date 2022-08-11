@@ -16,12 +16,25 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from Login import views as views_login
+from Prestamos import views as views_prestamos
+from Tarjetas import views as views_tarjetas
+from Cuentas import views as views_cuentas
+from django.urls import include
 # from Login import views as views_login
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views_login.login),
-    path('home/', views_login.home),
-    path('register/', views_login.register)
+    path('home/', views_login.home, name="home"),
+    path('register/', views_login.register, name='register'),
+    path('prestamos/', views_prestamos.prestamos, name='prestamos'),
+    path('tarjetas/', views_tarjetas.tarjetas, name='tarjetas'),
+    path('cuentas/', views_cuentas.cuentas, name='cuentas'),
+    path('accounts/',include('django.contrib.auth.urls')),
 ]
+
+from django.conf import settings
+if settings.DEBUG:
+  from django.conf.urls.static import static
+  urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
