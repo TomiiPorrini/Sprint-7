@@ -20,6 +20,7 @@ from Prestamos import views as views_prestamos
 from Tarjetas import views as views_tarjetas
 from Cuentas import views as views_cuentas
 from django.urls import include
+
 # from Login import views as views_login
 
 
@@ -38,3 +39,4 @@ from django.conf import settings
 if settings.DEBUG:
   from django.conf.urls.static import static
   urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
