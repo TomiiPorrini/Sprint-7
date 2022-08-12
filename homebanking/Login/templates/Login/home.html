@@ -1,166 +1,172 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {%load static%}
-    <link rel="stylesheet" href="{% static 'Login/css/styles-index.css' %}">
-    <style>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{% static 'Login/css/styles-index.css' %}">
+	<style>
         @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
-    </style>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <link rel="shortcut icon" href="./images/LOGO-SMALL-BLUE-BACKGROUND.svg">
-    <title>ITBANK</title>
+	</style>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+	      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+	<link rel="shortcut icon" href="./images/LOGO-SMALL-BLUE-BACKGROUND.svg">
+
+	<script defer src="{% static 'Login/js/app-index.js' %}"></script>
+
+
+	<title>ITBANK</title>
 </head>
 
 <body>
-    <!-- Header -->
-    <header class="header">
-        <div>
-            <nav class="nav">
-                <!-- clases necesarias. Y agregar navbar-collapse -->
-                <!-- navbar navbar-expand-lg bg-primary -->
-                <div class="nav-logo">
-                    <a href="index.html" title="logo"><img src="{% static 'Login/images/logo-blanco-header.svg' %}" class="nav-logo"
-                        alt=""></a>
-                </div>
-                <div class="nav-menu">
-                    <ul class="nav-menu__item">
-                        <li><a href="#" class="nav-menu__link">Préstamos</a></li>
-                        <li><a href="#" class="nav-menu__link">Inversiones</a></li>
-                        <li><a href="#" class="nav-menu__link">Tarjetas</a></li>
-                        <li><a href="#" class="nav-menu__link">Transferencias</a></li>
-                        <li><a href="#" class="nav-menu__link">Cuentas</a></li>
-                        <li><a href="#" class="nav-menu__link">Servicios</a></li>
-                        <li><a href="login.html" class="nav-menu__link">Cerrar Sesión</a></li>
-                    </ul>
-                </div>
-                <button class="navbar-toggler collapse" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-            </nav>
-        </div>
-    </header>
-    <!-- Main -->
-    <main class="main">
-        <p class="main-text">Hola, Juan</p>
-        <p class="sub-main-text">Estado de tu cuenta</p>
-        <section class="products">
-            <div class="container">
-                <div class="card-1">
-                    <div class="card-text">
-                        <h2 class="card-text__title">Tus cuentas</h2>
-                        <span class="card-text__subs"> 48999989</span>
+<!-- Header -->
+<header class="header">
+	<div>
+		<nav class="nav">
+			<!-- clases necesarias. Y agregar navbar-collapse -->
+			<!-- navbar navbar-expand-lg bg-primary -->
+			<div class="nav-logo">
+				<a href="{% url 'home' %}" title="logo"><img src="{% static 'Login/images/logo-blanco-header.svg' %}" class="nav-logo"
+				                                             alt=""></a>
+			</div>
+			<div class="nav-menu">
+				<ul class="nav-menu__item">
+					<li><a href="#" class="nav-menu__link">Préstamos</a></li>
+					<li><a href="#" class="nav-menu__link">Inversiones</a></li>
+					<li><a href="#" class="nav-menu__link">Tarjetas</a></li>
+					<li><a href="#" class="nav-menu__link">Transferencias</a></li>
+					<li><a href="#" class="nav-menu__link">Cuentas</a></li>
+					<li><a href="#" class="nav-menu__link">Servicios</a></li>
+					<li><a href="login.html" class="nav-menu__link">Cerrar Sesión</a></li>
+				</ul>
+			</div>
+			<button class="navbar-toggler collapse" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01"
+			        aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+		</nav>
+	</div>
+</header>
+<!-- Main -->
+<main class="main">
+	<p class="main-text">Hola, {{ user.first_name | title }}</p>
+	<p class="sub-main-text">Estado de tu cuenta</p>
+	<section class="products">
+		<div class="container">
+			<div class="card-1">
+				<div class="card-text">
+					<h2 class="card-text__title">Tus cuentas</h2>
+					<span class="card-text__subs"> 48999989</span>
 
-                        <span class="card-text__subs1"> $20.000,00</span>
-                        <br />
-                        <hr style="border-color: #DDE6EE; border-style: solid;
+					<span class="card-text__subs1"> $20.000,00</span>
+					<br/>
+					<hr style="border-color: #DDE6EE; border-style: solid;
                         background-color: #DDE6EE; border-width: 2px;">
-        
-                        <span class="card-text__subs"> 48997777</span>
 
-                        <span class="card-text__subs1"> USD $158,00</span>
-                    </div>
-                </div>
-                <div class="card card-2">
-                    <div class="card-text">
-                        <img class="card-image" src="{% static 'Login/images/visa-logo.svg' %}" alt="Images" /> <span
-                            class="card-text__title">Terminada en 7744</span>
-                        <p class="card-text__subs">
-                            Cierra el 23/06/2022 | vence el 01/06/2022
-                        </p>
-                        <p class="card-text__subs">Últimos consumos</p>
-                        <p class="card-text__subs">$120.077,20</p>
-                        <p class="card-text__subs">USD $12,50</p>
-                    </div>
-                </div>
-                <div class="card card-3">
-                    <div class="card-text">
-                        <img class="card-image" src="{% static 'Login/images/mastercard-logo.svg' %}" alt="Images" />
-                        <span class="card-text__title">Terminada en 4057</span>
-                        <p class="card-text__subs">
-                            Cierra el 23/06/2022 | vence el 06/06/2022
-                        </p>
-                        <p class="card-text__subs">Últimos consumos</p>
-                        <p class="card-text__subs">$120.077,20</p>
-                        <p class="card-text__subs">USD $12,50</p>
-                    </div>
-                </div>
-            </div>
-            <p class="sub-main-text">Cotización dolar hoy</p>
+					<span class="card-text__subs"> 48997777</span>
 
-            <div class = "card-4 table-responsive px-2">
-                <table class="table table-hover table-bordered" style="font-size: 1.2rem;">
-                    <thead>
+					<span class="card-text__subs1"> USD $158,00</span>
+				</div>
+			</div>
+			<div class="card card-2">
+				<div class="card-text">
+					<img class="card-image" src="{% static 'Login/images/visa-logo.svg' %}" alt="Images"/> <span
+						class="card-text__title">Terminada en 7744</span>
+					<p class="card-text__subs">
+						Cierra el 23/06/2022 | vence el 01/06/2022
+					</p>
+					<p class="card-text__subs">Últimos consumos</p>
+					<p class="card-text__subs">$120.077,20</p>
+					<p class="card-text__subs">USD $12,50</p>
+				</div>
+			</div>
+			<div class="card card-3">
+				<div class="card-text">
+					<img class="card-image" src="{% static 'Login/images/mastercard-logo.svg' %}" alt="Images"/>
+					<span class="card-text__title">Terminada en 4057</span>
+					<p class="card-text__subs">
+						Cierra el 23/06/2022 | vence el 06/06/2022
+					</p>
+					<p class="card-text__subs">Últimos consumos</p>
+					<p class="card-text__subs">$120.077,20</p>
+					<p class="card-text__subs">USD $12,50</p>
+				</div>
+			</div>
+		</div>
+		<p class="sub-main-text">Cotización dolar hoy</p>
 
-                        <tr>
-                            <th scope="col">Nombre</th>
-                            <th scope="col">Compra</th>
-                            <th scope="col">Venta</th>
-                            <th scope="col">Variación</th>
-                            <th scope="col">Fecha</th>
-                        </tr>
-                    </thead>
-                    <!-- agregar un for con las cotizaciones del archivo js -->
+		<div class="card-4 table-responsive px-2">
+			<table class="table table-hover table-bordered" style="font-size: 1.2rem;">
+				<thead>
 
-                    <tbody class="cotizacion">
-                        
-                    </tbody>
-                </table>
-            </div>
-            <div class="card-4">
-                <div class="card-text4" style="font-size: 2rem;">
-                    <p>Tenes disponible un</p>
-                    <span class="span4">préstamo</span>
-                    <span>preaprobado</span>
-                </div>
-                <div>
-                    <input class="card-submit" type="submit" value="Conocé más">
-                </div>
-            </div>
-        </section>
-    </main>
-    <!-- FOOTER -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-menu">
-                <p>Ayuda</p>
-                <hr style="border-color: #E5ECF3;
+				<tr>
+					<th scope="col">Nombre</th>
+					<th scope="col">Compra</th>
+					<th scope="col">Venta</th>
+					<th scope="col">Variación</th>
+					<th scope="col">Fecha</th>
+				</tr>
+				</thead>
+				<!-- agregar un for con las cotizaciones del archivo js -->
+
+				<tbody class="cotizacion">
+
+				</tbody>
+			</table>
+		</div>
+		<div class="card-4">
+			<div class="card-text4" style="font-size: 2rem;">
+				<p>Tenes disponible un</p>
+				<span class="span4">préstamo</span>
+				<span>preaprobado</span>
+			</div>
+			<div>
+				<input class="card-submit" type="submit" value="Conocé más">
+			</div>
+		</div>
+	</section>
+</main>
+<!-- FOOTER -->
+<footer class="footer">
+	<div class="container">
+		<div class="footer-menu">
+			<p>Ayuda</p>
+			<hr style="border-color: #E5ECF3;
                 border-style: solid;
                 background-color: #E5ECF3;
                 border-width: 2px;">
-                <br>
+			<br>
 
-                <ul class="footer-menu__item">
-                    <li><a href="#" class="footer-menu__link">Preguntas frecuentes</a></li>
-                    <li><a href="#" class="footer-menu__link">Términos y condiciones</a></li>
-            </div>
-            <div class="footer-menu">
-                <p>Redes sociales</p>
-                <hr style="border-color: #E5ECF3;
+			<ul class="footer-menu__item">
+				<li><a href="#" class="footer-menu__link">Preguntas frecuentes</a></li>
+				<li><a href="#" class="footer-menu__link">Términos y condiciones</a></li>
+		</div>
+		<div class="footer-menu">
+			<p>Redes sociales</p>
+			<hr style="border-color: #E5ECF3;
                 border-style: solid;
                 background-color: #E5ECF3;
                 border-width: 2px;">
-                <br>
+			<br>
 
-                <ul class="footer-menu__item2">
-                    <li><a href="#"><img src="{% static 'Login/images/twitter.svg' %}" class="footer-menu__icon" alt="Icono de twitter"></a>
-                    </li>
-                    <li><a href="#"><img src="{% static 'Login/images/instagram.svg' %}" class="footer-menu__icon"
-                                alt="Icono de Instagram"></a></li>
-                    <li><a href="#"><img src="{% static 'Login/images/institucional.svg' %}" class="footer-menu__icon"
-                                alt="Icon página web institucional"></a></li>
-
-            </div>
-            <div>
-                <p class="footer-copy">Itbank.com.ar</p>
-            </div>
-        </div>
-    </footer>
-    <script src = "app-index.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+			<ul class="footer-menu__item2">
+				<li><a href="#"><img src="{% static 'Login/images/twitter.svg' %}" class="footer-menu__icon" alt="Icono de twitter"></a>
+				</li>
+				<li><a href="#"><img src="{% static 'Login/images/instagram.svg' %}" class="footer-menu__icon"
+				                     alt="Icono de Instagram"></a></li>
+				<li><a href="#"><img src="{% static 'Login/images/institucional.svg' %}" class="footer-menu__icon"
+				                     alt="Icon página web institucional"></a></li>
+			</ul>
+		</div>
+		<div>
+			<p class="footer-copy">Itbank.com.ar</p>
+		</div>
+	</div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
 
 </html>

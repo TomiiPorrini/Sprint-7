@@ -1,3 +1,6 @@
+  {% load static %}
+
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -5,7 +8,6 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  {% load static %}
   <title>ITBANK</title>
 
   <!-- linkeo con bootstrap -->
@@ -18,6 +20,12 @@
   <link rel="stylesheet" href="{% static 'Login/css/styles-login.css' %}" />
   <!-- favicon -->
   <link rel="shortcut icon" href="{% static 'Login\static\Login\images\LOGO-SMALL-BLUE-BACKGROUND.svg' %}" />
+
+
+{#	JavaScript#}
+	   <script defer src="{% static 'Login/js/app-index.js' %}"></script>
+
+
 </head>
 
 
@@ -33,14 +41,25 @@
     <img src="{% static 'Login/images/profile-icon.png' %}" alt="" class="img-form" />
     <h5>¡Bienvenido!<h6>¿Qué tal tu día hoy?</h6>
     </h5>
-    <input class="controls" type="text" name="usuario" value="" placeholder="Usuario" />
-    <input class="controls" type="password" name="contrasena" value="" placeholder="Contraseña" />
+	
+	  <form action="" method="post">
+		  {% if messages %}
+			  {% for message in messages %}
 
-    <a href="index.html"><input class="buttons" type="submit" name="" value="Ingresar" /></a>
-    <p class="subtext"><a href clave="#">Olvide mi clave</a></p>
-    <p class="subtext"><a href="register.html">Registrarme</a></p>
+				  {{ message }}
+			  {% endfor %}
+
+
+		  {% endif %}
+		  {% csrf_token %}
+		  <input class="controls" type="text" name="username" value="" placeholder="Usuario" />
+		  <input class="controls" type="password" name="password" value="" placeholder="Contraseña" />
+	  <a href= ""><input class="buttons" type="submit" name="" value="Ingresar" /></a>
+	  </form>
+
+    <p class="subtext"><a href="{% url 'register' %}">Olvide mi clave</a></p>
+    <p class="subtext"><a href="{% url 'register' %}">Registrarme</a></p>
   </div>
-  <!-- Terminan los cambios de Jime -->
 
   <!-- PIE DE PAGINA -->
   <footer>
@@ -72,4 +91,3 @@
 </body>
 
 </html>
-<!-- con img-fluid ya hacemos que toda una imagen sea responsive -->
