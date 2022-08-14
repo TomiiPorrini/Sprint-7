@@ -16,9 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.urls import path
-from homebanking.Prestamos import views as views_prestamos
-from homebanking.Tarjetas import views as views_tarjetas
-from homebanking.Cuentas import views as views_cuentas
+from Prestamos import views as views_prestamos
+from Tarjetas import views as views_tarjetas
+from Cuentas import views as views_cuentas
+from movimientos import views as views_movimientos
 from django.urls import include
 
 # from Login import views as views_login
@@ -31,6 +32,7 @@ urlpatterns = [
     path('tarjetas/', views_tarjetas.tarjetas, name='tarjetas'),
     path('cuentas/', views_cuentas.cuentas, name='cuentas'),
     path('accounts/',include('django.contrib.auth.urls')),
+    path('movimientos/',views_movimientos.movimientos, name='movimientos'),
 ]
 
 from django.conf import settings

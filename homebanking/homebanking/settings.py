@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     'Cuentas',
     'Login',
     'Prestamos',
-    'Tarjetas'
+    'Tarjetas',
+    'movimientos'
     
     # Third party apps
 ]

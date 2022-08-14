@@ -1,0 +1,31 @@
+<!-- agregamos el bloque extends que tomara el html base-->
+{% extends 'templates/base.html' %}
+<!-- Agregamos el contenido estatico-->
+{% load static %}
+<!-- Agregamos el titulo de la home -->
+{% block title %} Movimientos {% endblock %}
+
+{% block style %}<link rel="stylesheet" href="{% static 'Login/css/styles-index.css' %}">{% endblock %}
+
+<!-- indicamos que lo de abajao se dibuje despues del menu armado en la base-->
+{% block content %}
+
+    {% for movimiento in movimientos %} 
+    <div class="row project">   
+        <div class="col-lg-3 col-md-4 offset-lg-1">
+            
+            <p>{{movimiento.monto}}</p>
+
+        </div>
+        <!-- <div class="col-lg-7 col-md-8">
+            <h2 class="section-heading title">{{project.title}}</h2>   
+            <p>{{project.description}}</p>
+            {% if project.link %}
+                <p><a href="{{project.link}}">Más información</a></p>
+            {% endif %}
+        </div> -->
+    </div>
+{% endfor %}
+
+
+{% endblock %}

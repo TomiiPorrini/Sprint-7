@@ -1,14 +1,13 @@
 
-{% extends 'templates/base.html' %}
+{% extends 'Login/base-log-reg.html' %}
 
 {% load static %}
 
-{% block title %} Gestion de Proyectos - Inicio {% endblock %}
-{% block background %}{% static 'app_prueba/img/home-bg.jpg' %}{% endblock %}
-
-{% block headers %}
+{% block style %}
+<link rel="stylesheet" href="{% static 'Login/css/styles-reg.css' %}" />
 {% endblock %}
 
+{% block title %} Registrate {% endblock %}
 {% block content %}
 
 <div class="form-login">

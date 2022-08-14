@@ -5,13 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {%load static%}
-    <link rel="stylesheet" href="{% static 'Login/css/styles-index.css' %}">
+    {% block style %}{% endblock %}
     <style>
         @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
     </style>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="shortcut icon" href="./images/LOGO-SMALL-BLUE-BACKGROUND.svg">
-    <title>{% block title %}{% endblock %}</title>
+    <title>{% block title %}{% endblock %} | ITBANK</title>
 </head>
 <body>
     <header class="header">
@@ -28,6 +28,7 @@
                         <li><a href="{% url 'prestamos' %}" class="nav-menu__link">Préstamos</a></li>
                         <li><a href="{% url 'tarjetas' %}" class="nav-menu__link">Tarjetas</a></li>
                         <li><a href="{% url 'cuentas' %}" class="nav-menu__link">Cuentas</a></li>
+                        <li><a href="{% url 'movimientos' %}" class="nav-menu__link">Movimientos</a></li>
                         <li><a href="{% url 'login' %}" class="nav-menu__link">Cerrar Sesión</a></li>
                     </ul>
                 </div>
@@ -74,7 +75,7 @@
             </div>
         </div>
     </footer>
-    <script src = "app-index.js"></script>
+    <script src = "{% static 'Login/js/app-index.js' %}"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
 </html>
