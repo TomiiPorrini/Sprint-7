@@ -118,7 +118,7 @@ footer {
     padding: 1em 0;
     text-align: center;
     align-items: center;
-    position: absolute;
+    position: relative;
     bottom: 0;
     left: 0;
     width: 100%;
@@ -207,7 +207,7 @@ footer {
         padding: 1rem;
         text-align: center;
         align-items: center;
-        position: absolute;
+        position: relative;
         bottom: 0;
         left: 0;
         width: 100%;
