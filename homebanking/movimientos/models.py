@@ -12,3 +12,5 @@ class Movimientos(models.Model):
     class Meta:
         managed = False
         db_table = 'movimientos'
+        verbose_name = "moviento"
+        verbose_name_plural = "movimientos"

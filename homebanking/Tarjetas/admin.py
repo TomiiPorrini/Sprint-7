@@ -1,3 +1,7 @@
 from django.contrib import admin
+from .models import Tarjeta
 
-# Register your models here.
+admin.site.register(Tarjeta)
+
+class ProjectAdmin (admin.ModelAdmin):
+    readonly_fields= ('created','updated')

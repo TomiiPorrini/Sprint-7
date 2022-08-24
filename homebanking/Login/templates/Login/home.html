@@ -1,4 +1,4 @@
-{% extends 'templates/base.html' %}
+{% extends 'Login/base.html' %}
 {% load static %}
 
 {% block title %} Home {% endblock %}
@@ -12,7 +12,7 @@
 
 {% block content %}
 <main class="main">
-	<p class="main-text">Hola, {{ user.first_name | title }}</p>
+	<p class="main-text">Hola, {{ user.first_name | title }} {{ user.last_name | title }}</p>
 	<p class="sub-main-text">Estado de tu cuenta</p>
 	<section class="products">
 		<div class="container">
@@ -84,7 +84,7 @@
 				<span>preaprobado</span>
 			</div>
 			<div>
-				<input class="card-submit" type="submit" value="Conocé más">
+				<a href="{% url 'prestamos' %}"><input class="card-submit" type="submit" value="Conocé más"></a>
 			</div>
 		</div>
 	</section>
