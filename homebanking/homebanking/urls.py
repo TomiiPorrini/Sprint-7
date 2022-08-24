@@ -20,14 +20,18 @@ from Prestamos import views as views_prestamos
 from Tarjetas import views as views_tarjetas
 from Cuentas import views as views_cuentas
 from movimientos import views as views_movimientos
+from Login import views as views_login
 from django.urls import include
+from django.conf import settings
 
 # from Login import views as views_login
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('Login.urls')),
+    path('', views_login.login_page, name='login'),
+    path('registro/', views_login.register, name='register'),
+    path('home/', views_login.home, name='home'),
     path('prestamos/', views_prestamos.prestamos, name='prestamos'),
     path('tarjetas/', views_tarjetas.tarjetas, name='tarjetas'),
     path('cuentas/', views_cuentas.cuentas, name='cuentas'),
@@ -35,7 +39,6 @@ urlpatterns = [
     path('movimientos/',views_movimientos.movimientos, name='movimientos'),
 ]
 
-from django.conf import settings
 if settings.DEBUG:
     from django.conf.urls.static import static
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

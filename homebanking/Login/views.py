@@ -4,6 +4,7 @@ from django.contrib import messages
 from django.contrib.auth.forms import UserCreationForm
 from .forms import RegisterUserForm
 from django.contrib.auth.decorators import login_required
+from django.urls import reverse
 
 
 # Create your views here.
@@ -20,10 +21,10 @@ def login_page(request):
 		
 		else:
 			messages.success(request, ('Hubo un error con el login. Por favor, intente nuevamente.'))
-			return redirect('login')
+			return render(request, 'registration/login.html', {})
 	
 	else:
-		return render(request, 'Login/login.html', {})
+		return render(request, 'registration/login.html', {})
 
 
 @login_required(login_url='login')
@@ -41,8 +42,8 @@ def register(request):
 			password = form.cleaned_data['password1']
 			user = authenticate(username=username, password=password)
 			login(request, user)
-			messages.success(request, 'Registration successful')
-			return redirect('home')
+			messages.success(request, 'El usuario se ha registrado con éxito!')
+			return render(request, 'registration/login.html', {})
 	
 	else:
 		form = RegisterUserForm()
